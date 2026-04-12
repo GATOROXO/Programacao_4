@@ -1,0 +1,130 @@
+/* Variaveis globais de cor para facilitar manutencao do tema */
+:root {
+    --cor-bg-inicio: #ffd8ea; /* Cor do topo do fundo */
+    --cor-bg-meio: #ffc0dd; /* Cor intermediaria do degrade */
+    --cor-bg-fim: #f9b3d6; /* Cor final (parte de baixo) do fundo */
+    --cor-cabecalho: #a31687; /* Cor principal da area inicial/cabecalho */
+    --cor-sombra-rgb: 185, 26, 121; /* Cor base da sombra em formato RGB */
+}
+
+/* Remove espacamentos padrao do navegador e garante altura total da tela */
+html, body {
+    margin: 0; /* Remove margem externa padrao da pagina */
+    padding: 0; /* Remove espacamento interno padrao da pagina */
+    min-height: 100%; /* Garante pelo menos 100% da altura visivel */
+
+}
+
+/* Fundo geral da pagina com degrade vertical */
+body {
+    /* Degrade com cor predominante rosa clara desde o topo */
+    background: linear-gradient(180deg, var(--cor-bg-inicio) 0%, var(--cor-bg-meio) 55%, var(--cor-bg-fim) 100%); /* 180deg = de cima para baixo */
+}
+
+/* Bloco inicial (topo) com cor destacada e sombra suave */
+.Inicio, td{
+    color: white; /* Deixa o texto branco no topo e nas celulas do menu */
+    background-color: var(--cor-cabecalho); /* Aplica a cor do cabecalho salva na variavel */
+    box-shadow: 0 4px 12px rgba(var(--cor-sombra-rgb), 0.2); /* Sombra: x=0, y=4, blur=12, opacidade=0.2 */
+    padding: 16px 0; /* 16px em cima/baixo e 0 nas laterais */
+}
+
+/* Centraliza o titulo principal do topo */
+.txt_entrada{
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 0; /* Remove margem padrao do h1 para evitar espacos extras */
+}
+
+/* Tabela de links do menu: largura pelo conteudo e centralizada */
+.link_entrada{
+    width: fit-content; /* Faz a tabela ocupar apenas o tamanho do conteudo */
+    margin: 10px auto 0; /* Margem: topo 10px, lados auto (centraliza), baixo 0 */
+    border-collapse: collapse; /* Junta bordas de celulas (evita espacamento entre elas) */
+}
+
+/* Celulas do menu com alinhamento central e espacamento horizontal */
+.link_entrada td {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85); /* Sombra escura para destacar o texto */
+    text-align: center; /* Centraliza o texto dentro de cada celula */
+    padding: 0 10px; /* 0 em cima/baixo e 10px nas laterais para separar os itens */
+}
+.cabecalho{
+    padding:0; /* Remove espaco interno do titulo do cabecalho */
+}
+.bloco_cabecalho{
+    padding: 1%; /* Espacamento interno proporcional ao tamanho da tela */
+    color: white; /* Cor do texto dentro do bloco do cabecalho */
+    /*linear-gradient(direcao, cor1 posicao, cor2 posicao, cor3 posicao);*/
+    background: linear-gradient(180deg,rgb(228, 88, 221) 0%, var(--cor-cabecalho) 10%, var(--cor-cabecalho) 40%, rgb(228, 88, 221) 99%); /* Degrade rosa do topo para baixo no bloco */
+    text-align: center; /* Centraliza o texto do bloco */
+}
+
+.background_rosa_fraco {
+    max-width: 980px; /* Limita a largura maxima da area principal */
+    margin: 20px auto; /* Centraliza o container na pagina */
+    padding: 0 14px 30px; /* Espaco interno: laterais 14px e base 30px */
+}
+
+/* Caixas brancas para destacar cada secao */
+.aba_sobre,
+.personagem,
+.galeria,
+#div_rodape {
+    background-color: rgba(255, 255, 255, 0.92); /* Fundo branco levemente transparente */
+    border: 1px solid #f4d2e6; /* Borda rosa clara para destacar a caixa */
+    border-radius: 14px; /* Cantos arredondados */
+    box-shadow: 0 6px 18px rgba(128, 0, 96, 0.12); /* Sombra suave da caixa */
+    padding: 16px; /* Espaco interno para o conteudo nao encostar nas bordas */
+    margin-top: 16px; /* Distancia entre uma secao e outra */
+}
+
+
+.aba_sobre{
+    padding-left: 16px; /* Recuo do conteudo para a esquerda ficar mais confortavel */
+}
+
+.galeria__titulo {
+    margin-top: 0; /* Remove margem superior padrao do titulo */
+}
+
+.galeria__grid {
+    display: grid; /* Ativa layout em grade para os itens da galeria */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Cria colunas responsivas com largura minima de 140px */
+    gap: 12px; /* Espaco entre os blocos da galeria */
+}
+
+.galeria__item {
+    background-color: #ffffff; /* Fundo branco de cada item da galeria */
+    border: 2px dashed #d8a3c5; /* Borda tracejada para indicar area reservada */
+    border-radius: 10px; /* Arredonda os cantos dos itens */
+    min-height: 120px; /* Altura minima de cada bloco */
+    display: flex; /* Usa flex para centralizar o texto dentro do bloco */
+    align-items: center; /* Centraliza na vertical */
+    justify-content: center; /* Centraliza na horizontal */
+    color: #8a3d70; /* Cor do texto placeholder */
+    font-weight: 600; /* Deixa o texto um pouco mais forte */
+}
+
+/* Lista de personagens em formato de grade flexivel */
+.personagem__grid{
+    display: flex; /* Ativa o modelo flexbox para organizar os itens */
+    flex-wrap: wrap; /* Permite quebrar para a linha de baixo quando faltar espaco */
+    gap: 15px; /* Espaco entre os cards */
+    /* Espaçamento entre os cards */
+    justify-content: safe; /* Distribui os itens de forma segura sem cortar conteudo */
+    list-style: none; /* Remove bolinhas da lista ul */
+    /* Rodape em formato de bloco grande com degrade horizontal */
+}
+.rodape {
+    margin-top: 36px; /* Espaco entre a ultima caixa e o rodape */
+    width: 100%; /* Faz o rodape ocupar toda a largura disponivel da pagina */
+    padding: 22px 16px; /* Espaco interno para o texto respirar */
+
+    color: white; /* Cor do texto para contraste no fundo escuro */
+    text-align: center; /* Centraliza o texto do rodape */
+    background: linear-gradient(to left, rgb(228, 88, 221) 0%, var(--cor-cabecalho) 50%, rgb(228, 88, 221) 100%); /* Degrade da direita para a esquerda */
+}
+
+.rodape p {
+    margin: 0; /* Mantem somente o titulo centralizado sem folga extra */
+}

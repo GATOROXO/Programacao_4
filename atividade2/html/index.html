@@ -1,74 +1,116 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <!-- Configuracao de caracteres para aceitar acentos e simbolos -->
     <meta charset="UTF-8">
+    <!-- Titulo exibido na aba do navegador -->
     <title name="title_save1">hello kitty fã Clube</title>
+    <!-- Importa o arquivo de estilos da pagina -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
+    <!-- Bloco de abertura com titulo e menu principal -->
     <div class="Inicio" id="1">
+        <!-- Titulo principal da pagina -->
         <h1 class="txt_entrada">🎀Hello kitty e amiguinhos🎀</h1>
+        <!-- Menu inicial (atualmente em formato de tabela) -->
         <table class="link_entrada" border="0%" width="100%">
             <tr>
                 <!-- é pra ser os links do inicio da tela -->
                 <!-- indicaram me para colcar isso em uma lista e nao em uma table, após estudo avaliar aplicabilidade -->
-                <td>sobre</td>
-                <td>Personagens</td>
-                <td>galeria</td>
+                <td><a href="#sobre">Sobre</a></td>
+                <td><a href="#personagens">Personagens</a></td>
+                <td><a href="#galeria">Galeria</a></td>
                 <td>entrar</td>
             </tr>
         </table>
     </div>
-    <div class="bloco_cabeçalho" id="2">
-        <h1 class="cabeçalho">Um mundo cheio de fofura e amizade💞</h1>
+
+    <!-- Faixa de cabecalho com frase de destaque -->
+    <div class="bloco_cabecalho" id="2">
+        <h1 class="cabecalho">Um mundo cheio de fofura e amizade💞</h1>
     </div>
+
+    <!-- Area principal com secoes de conteudo -->
     <div class="background_rosa_fraco" id="3">
-        <div class="aba_sobre">
+
+        <!-- Secao "Sobre" com texto introdutorio -->
+        <div class="aba_sobre" id="sobre">
             <h3>Sobre<br></h3>
             <p class="texto_padrao">O universo hello kitty é cheio de amizade, carinho e aventuras fofinhas. Cada
                 personagem tem sua personalidade encatadora!</p>
         </div>
-        <section class="personagem">
-            <h3 class="personagem__title">Personagens</h2>
-            <ul class="personagem__grid">
-                <li class="cards">
-                    <h4 class="card_name">Hello Kitty</h4>
-                    <p class="card_description">Gentil e adorável 🎀</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">My melody</h4>
-                    <p class="card_description">Doce e amigavel🐰</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">Kuromi</h4>
-                    <p class="card_description">Travessa e estilosa😈</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">cinnamoroll</h4>
-                    <p class="card_description">fofo e tímido☁</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">pompompurin</h4>
-                    <p class="card_description">relaxado e fofo🍮</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">badz-Maru</h4>
-                    <p class="card_description">Rebelde e engraçado🐧</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">Keroppi</h4>
-                    <p class="card_description">Alegre e aventureiro🐸</p>
-                </li>
-                <li class="personagem_grid">
-                    <h4 class="card_name">Pochacco</h4>
-                    <p class="card_description">Curioso e desajeitado🐶</p>
-                </li>
 
-            </ul>
+        <!-- Secao de personagens com cards em lista -->
+        <section class="personagem" id="personagens">
+            <h3 class="personagem__title">Personagens</h2>
+                <ul class="personagem__grid">
+                    <li class="cards">
+                        <h4 class="card_name">Hello Kitty</h4>
+                        <p class="card_description">Gentil e adorável 🎀</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">My melody</h4>
+                        <p class="card_description">Doce e amigavel🐰</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">Kuromi</h4>
+                        <p class="card_description">Travessa e estilosa😈</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">cinnamoroll</h4>
+                        <p class="card_description">fofo e tímido☁</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">pompompurin</h4>
+                        <p class="card_description">relaxado e fofo🍮</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">badz-Maru</h4>
+                        <p class="card_description">Rebelde e engraçado🐧</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">Keroppi</h4>
+                        <p class="card_description">Alegre e aventureiro🐸</p>
+                    </li>
+                    <li class="personagem_grid">
+                        <h4 class="card_name">Pochacco</h4>
+                        <p class="card_description">Curioso e desajeitado🐶</p>
+                    </li>
+
+                </ul>
         </section>
 
+        <!-- Secao de galeria com espacos reservados para imagens -->
+        <section class="galeria" id="galeria">
+            <h3 class="galeria__titulo">Galeria</h3>
+            <div class="galeria__grid">
+                <div class="galeria__item">Imagem 1</div>
+                <div class="galeria__item">Imagem 2</div>
+                <div class="galeria__item">Imagem 3</div>
+                <div class="galeria__item">Imagem 4</div>
+            </div>
+        </section>
+
+        <!-- Rodape intermediario com formulario simples de contato -->
+        <div id="div_rodape">
+            <section class="login_area">
+                <!-- Campos de entrada para nome, email e mensagem -->
+                <input type="text" name="nome" placeholder="Nome"><br>
+                <input type="text" name="E-mail" placeholder="E-mail"><br>
+                <input type="text" name="mensagem_fofa" placeholder="Mensagem fofinha 🎀"><br>
+                <!-- Botao de envio do formulario -->
+                <input type="button" name="enviar" value="enviar">
+            </section>
+        </div>
+
+    </div>
+
+    <!-- Rodape final da pagina -->
+    <section class="rodape">
+        <p> Como centralizar uma DIV?</p>
+    </section>
 </body>
 
 </html>
