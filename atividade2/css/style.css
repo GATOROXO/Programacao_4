@@ -1,130 +1,373 @@
-/* Variaveis globais de cor para facilitar manutencao do tema */
+/* Variaveis globais usadas pelos fundos, cabecalho, cards e botao */
 :root {
-    --cor-bg-inicio: #ffd8ea; /* Cor do topo do fundo */
-    --cor-bg-meio: #ffc0dd; /* Cor intermediaria do degrade */
-    --cor-bg-fim: #f9b3d6; /* Cor final (parte de baixo) do fundo */
-    --cor-cabecalho: #a31687; /* Cor principal da area inicial/cabecalho */
-    --cor-sombra-rgb: 185, 26, 121; /* Cor base da sombra em formato RGB */
+    --cor-bg-inicio: #ffd8ea;
+    /* Cor do topo do fundo da pagina */
+    --cor-bg-meio: #ffc0dd;
+    /* Cor do meio do degrade do body */
+    --cor-bg-fim: #f9b3d6;
+    /* Cor da parte de baixo do fundo */
+    --cor-cabecalho: #99127e;
+    /* Cor principal do topo e dos destaques */
+    --cor-sombra-rgb: 185, 26, 121;
+    /* Cor usada nas sombras dos cards e blocos */
 }
 
-/* Remove espacamentos padrao do navegador e garante altura total da tela */
-html, body {
-    margin: 0; /* Remove margem externa padrao da pagina */
-    padding: 0; /* Remove espacamento interno padrao da pagina */
-    min-height: 100%; /* Garante pelo menos 100% da altura visivel */
-
-}
-
-/* Fundo geral da pagina com degrade vertical */
+/* Remove margens e padding padrao do HTML e do body */
+html,
 body {
-    /* Degrade com cor predominante rosa clara desde o topo */
-    background: linear-gradient(180deg, var(--cor-bg-inicio) 0%, var(--cor-bg-meio) 55%, var(--cor-bg-fim) 100%); /* 180deg = de cima para baixo */
+    margin: 0;
+    /* Remove margem externa da pagina inteira */
+    padding: 0;
+    /* Remove espaco interno padrao do navegador */
+    min-height: 100%;
+    /* Garante altura minima da tela toda */
+
 }
 
-/* Bloco inicial (topo) com cor destacada e sombra suave */
-.Inicio, td{
-    color: white; /* Deixa o texto branco no topo e nas celulas do menu */
-    background-color: var(--cor-cabecalho); /* Aplica a cor do cabecalho salva na variavel */
-    box-shadow: 0 4px 12px rgba(var(--cor-sombra-rgb), 0.2); /* Sombra: x=0, y=4, blur=12, opacidade=0.2 */
-    padding: 16px 0; /* 16px em cima/baixo e 0 nas laterais */
+/* Fundo geral aplicado no body da pagina */
+body {
+    /* Degrade vertical rosa em toda a pagina */
+    background: linear-gradient(180deg, var(--cor-bg-inicio) 0%, var(--cor-bg-meio) 55%, var(--cor-bg-fim) 100%);
+    /* 180deg = de cima para baixo */
 }
 
-/* Centraliza o titulo principal do topo */
-.txt_entrada{
-    text-align: center; /* Centraliza o texto horizontalmente */
-    margin: 0; /* Remove margem padrao do h1 para evitar espacos extras */
+/* Topo da pagina e celulas da tabela do menu */
+.Inicio,
+td {
+    color: white;
+    /* Cor do texto no bloco Inicio e nas celulas td */
+    background-color: var(--cor-cabecalho);
+    /* Cor do fundo no inicio e no menu */
+    box-shadow: 0 4px 12px rgba(var(--cor-sombra-rgb), 0.2);
+    /* Sombra do topo e das celulas */
+    padding: 16px 0;
+    /* Espaco interno no bloco Inicio e nas td */
 }
 
-/* Tabela de links do menu: largura pelo conteudo e centralizada */
-.link_entrada{
-    width: fit-content; /* Faz a tabela ocupar apenas o tamanho do conteudo */
-    margin: 10px auto 0; /* Margem: topo 10px, lados auto (centraliza), baixo 0 */
-    border-collapse: collapse; /* Junta bordas de celulas (evita espacamento entre elas) */
+/* Titulo principal dentro da div Inicio */
+.txt_entrada {
+    text-align: center;
+    /* Centraliza o h1 do topo */
+    margin: 0;
+    /* Remove margem padrao do titulo */
 }
 
-/* Celulas do menu com alinhamento central e espacamento horizontal */
+/* Tabela de links dentro da div Inicio */
+.link_entrada {
+    width: fit-content;
+    /* Faz a tabela do menu ocupar so o necessario */
+    margin: 10px auto 0;
+    /* Centraliza a tabela do menu */
+    border-collapse: collapse;
+    /* Junta as bordas das celulas do menu */
+}
+
+/* Celulas do menu dentro da tabela link_entrada */
 .link_entrada td {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85); /* Sombra escura para destacar o texto */
-    text-align: center; /* Centraliza o texto dentro de cada celula */
-    padding: 0 10px; /* 0 em cima/baixo e 10px nas laterais para separar os itens */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85);
+    /* Sombra no texto dos links do menu */
+    text-align: center;
+    /* Centraliza o texto dentro da celula */
+    padding: 0 10px;
+    /* Espaco lateral entre os links */
 }
-.cabecalho{
-    padding:0; /* Remove espaco interno do titulo do cabecalho */
+
+/* Links dentro das celulas do menu */
+.link_entrada a {
+    /* Remove o sublinhado do link do menu */
+    text-decoration: none;
+    /* Herda a cor branca da celula td */
+    color: inherit;
 }
-.bloco_cabecalho{
-    padding: 1%; /* Espacamento interno proporcional ao tamanho da tela */
-    color: white; /* Cor do texto dentro do bloco do cabecalho */
+
+/* Link do menu quando o mouse passa por cima */
+.link_entrada a:hover {
+    /* Ajusta o destaque do link no hover */
+    filter: brightness(1);
+    text-shadow: none;
+    color: #f1cdea;
+
+    text-decoration: underline;
+}
+
+/* H1 dentro da faixa roxa do cabecalho */
+.cabecalho {
+    padding: 0;
+    /* Remove espaco interno do h1 do cabecalho */
+}
+
+/* Faixa decorativa logo abaixo do menu inicial */
+.bloco_cabecalho {
+    padding: 1%;
+    /* Espaco interno da faixa do cabecalho */
+    color: white;
+    /* Cor do texto dentro da faixa do cabecalho */
     /*linear-gradient(direcao, cor1 posicao, cor2 posicao, cor3 posicao);*/
-    background: linear-gradient(180deg,rgb(228, 88, 221) 0%, var(--cor-cabecalho) 10%, var(--cor-cabecalho) 40%, rgb(228, 88, 221) 99%); /* Degrade rosa do topo para baixo no bloco */
-    text-align: center; /* Centraliza o texto do bloco */
+    background: linear-gradient(180deg, rgb(228, 88, 221) 0%, var(--cor-cabecalho) 10%, var(--cor-cabecalho) 40%, rgb(228, 88, 221) 99%);
+    /* Degrade da faixa do cabecalho */
+    text-align: center;
+    /* Centraliza o texto da faixa */
 }
 
+/* Container que envolve as secoes principais */
 .background_rosa_fraco {
-    max-width: 980px; /* Limita a largura maxima da area principal */
-    margin: 20px auto; /* Centraliza o container na pagina */
-    padding: 0 14px 30px; /* Espaco interno: laterais 14px e base 30px */
+    max-width: 980px;
+    /* Limita a largura da area principal */
+    margin: 20px auto;
+    /* Centraliza o bloco principal */
+    padding: 0 14px 30px;
+    /* Espaco interno do conteudo central */
 }
 
-/* Caixas brancas para destacar cada secao */
+/* Caixas de conteudo para Sobre, Personagens, Galeria e formulario */
 .aba_sobre,
 .personagem,
 .galeria,
-#div_rodape {
-    background-color: rgba(255, 255, 255, 0.92); /* Fundo branco levemente transparente */
-    border: 1px solid #f4d2e6; /* Borda rosa clara para destacar a caixa */
-    border-radius: 14px; /* Cantos arredondados */
-    box-shadow: 0 6px 18px rgba(128, 0, 96, 0.12); /* Sombra suave da caixa */
-    padding: 16px; /* Espaco interno para o conteudo nao encostar nas bordas */
-    margin-top: 16px; /* Distancia entre uma secao e outra */
+#login {
+    background-color: rgba(255, 255, 255, 0.92);
+    /* Fundo das caixas de secao */
+    border: 1px solid #f4d2e6;
+    /* Borda das caixas de secao */
+    border-radius: 14px;
+    /* Cantos arredondados das secoes */
+    box-shadow: 0 6px 18px rgba(128, 0, 96, 0.12);
+    /* Sombra das secoes */
+    padding: 16px;
+    /* Espaco interno das secoes */
+    margin-top: 16px;
+    /* Distancia entre as secoes */
 }
 
 
-.aba_sobre{
-    padding-left: 16px; /* Recuo do conteudo para a esquerda ficar mais confortavel */
+/* Caixa da secao Sobre */
+.aba_sobre {
+    padding-left: 16px;
+    /* Recuo extra no conteudo da secao Sobre */
 }
 
+
+/* Lista que envolve os cards dos personagens */
+.personagem__grid {
+    display: flex;
+    /* Organiza os li dos personagens em flex */
+    flex-wrap: wrap;
+    /* Quebra a linha quando faltar espaco */
+    gap: 15px;
+    /* Espaco entre os cards de personagem */
+    justify-content: center;
+    /* Centraliza os cards na secao */
+    list-style: none;
+    /* Remove as bolinhas da lista */
+    margin: 0;
+    padding: 14px;
+}
+
+/* Card individual de cada personagem */
+.personagem__item {
+    width: 190px;
+    min-height: 110px;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e9b7d7;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(128, 0, 96, 0.1);
+    text-align: center;
+    /* Centraliza nome e descricao dentro do card */
+}
+
+
+/* Titulo da secao Galeria */
 .galeria__titulo {
-    margin-top: 0; /* Remove margem superior padrao do titulo */
+    margin-top: 10px;
+    /* Espaço acima do titulo da galeria */
+    margin-bottom: 12px;
+    /* Espaço abaixo do titulo da galeria */
+
 }
 
+/* Area que organiza os blocos da galeria */
 .galeria__grid {
-    display: grid; /* Ativa layout em grade para os itens da galeria */
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Cria colunas responsivas com largura minima de 140px */
-    gap: 12px; /* Espaco entre os blocos da galeria */
+    display: flex;
+    /* Coloca os itens da galeria em linha */
+    flex-wrap: wrap;
+    /* Permite quebrar a linha */
+    justify-content: center;
+    /* Centraliza os blocos da galeria */
+    margin-bottom: 12px;
+    /* Espaco abaixo da grade */
+    gap: 12px;
+    /* Distancia entre os blocos da galeria */
 }
 
+/* Quando um card de personagem ou item da galeria recebe clique */
+.personagem__item:active,
+.galeria__item:active {
+    /* Efeito de clique: o bloco parece ser pressionado */
+    transform: scale(0.90);
+}
+
+/* Base de interacao dos cards e itens da galeria */
+.personagem__item,
 .galeria__item {
-    background-color: #ffffff; /* Fundo branco de cada item da galeria */
-    border: 2px dashed #d8a3c5; /* Borda tracejada para indicar area reservada */
-    border-radius: 10px; /* Arredonda os cantos dos itens */
-    min-height: 120px; /* Altura minima de cada bloco */
-    display: flex; /* Usa flex para centralizar o texto dentro do bloco */
-    align-items: center; /* Centraliza na vertical */
-    justify-content: center; /* Centraliza na horizontal */
-    color: #8a3d70; /* Cor do texto placeholder */
-    font-weight: 600; /* Deixa o texto um pouco mais forte */
+    cursor: pointer;
+    /* Mostra que o bloco pode ser clicado */
+    /* Faz a transicao do hover e do clique ficar suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Lista de personagens em formato de grade flexivel */
-.personagem__grid{
-    display: flex; /* Ativa o modelo flexbox para organizar os itens */
-    flex-wrap: wrap; /* Permite quebrar para a linha de baixo quando faltar espaco */
-    gap: 15px; /* Espaco entre os cards */
-    /* Espaçamento entre os cards */
-    justify-content: safe; /* Distribui os itens de forma segura sem cortar conteudo */
-    list-style: none; /* Remove bolinhas da lista ul */
-    /* Rodape em formato de bloco grande com degrade horizontal */
+/* Hover dos cards de personagem e dos itens da galeria */
+.personagem__item:hover,
+.galeria__item:hover {
+    /* Levanta levemente o bloco ao passar o mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(var(--cor-sombra-rgb), 0.4);
+    /* Sombra mais forte no hover */
+    border-color: var(--cor-cabecalho);
+    /* Destaca a borda com a cor do tema */
 }
+
+/* Card da galeria usado para cada bloco da area de imagens */
+.galeria__item {
+    background-color: #ffffff;
+    /* Fundo de cada bloco da galeria */
+    border: 2px dashed #d8a3c5;
+    /* Borda tracejada do bloco da galeria */
+    border-radius: 10px;
+    /* Cantos arredondados do bloco da galeria */
+    width: 160px;
+    /* Largura fixa para manter os blocos iguais */
+    min-height: 100px;
+    /* Altura minima padronizada */
+    padding: 12px;
+    /* Espaco interno do item */
+    display: flex;
+    /* Centraliza o conteudo do bloco */
+    align-items: center;
+    /* Centraliza verticalmente o conteudo */
+    justify-content: center;
+    /* Centraliza horizontalmente o conteudo */
+    color: #8a3d70;
+    /* Cor do texto dentro da galeria */
+    font-weight: 600;
+    /* Deixa o texto mais forte */
+    cursor: pointer;
+    /* Mostra interacao no item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Suaviza o hover */
+}
+
+/* Imagem dentro de um item da galeria */
+.galeria__item img {
+    width: 100%;
+    /* Faz a imagem ocupar a largura do card */
+    max-width: 130px;
+    /* Limita a largura da imagem */
+    height: auto;
+    /* Mantem a proporcao da imagem */
+    max-height: 140px;
+    /* Limita a altura da imagem */
+    border-radius: 8px;
+    /* Arredonda os cantos da imagem */
+    margin-right: 6px;
+    /* Pequeno espaco lateral se houver texto */
+    cursor: pointer;
+    /* Mostra interacao na imagem */
+}
+
+/* Nome do personagem dentro de cada card */
+.card_name {
+    margin: 0 0 8px;
+    /* Espaco abaixo do nome */
+    color: #7a2c61;
+    /* Cor do nome do personagem */
+}
+
+/* Descricao curta dentro do card de personagem */
+.card_description {
+    margin: 15%;
+    /* Recuo exagerado da descricao dentro do card */
+    color: #8a3d70;
+    /* Cor da descricao */
+}
+
+/* Caixa do formulario de contato */
+.login_area {
+    padding: 2%;
+    /* Espaco interno do formulario */
+    border: #7a2c61;
+    /* Cor de borda do formulario */
+    background-color: rgba(253, 183, 249, 0.92);
+    /* Fundo do formulario */
+    background: scroll;
+    /* Mantem o fundo padrao ao rolar */
+    display: grid;
+    /* Organiza os campos em coluna */
+    gap: 10px;
+    /* Espaco entre os campos */
+    border-radius: 10px;
+    /* Cantos arredondados do formulario */
+    box-shadow: #7a2c61;
+    /* Sombra do formulario */
+}
+
+/* Campos de texto dentro do formulario */
+.login_area input[type="text"] {
+    background-color: #ed86cd7e;
+    /* Fundo dos inputs de texto */
+    display: flex;
+    /* Faz o campo ocupar a linha do grid */
+    padding: 10px 10px;
+    /* Espaco interno do campo */
+    border-color: #e9b7d7;
+    /* Cor de borda do input */
+    border: none;
+    /* Remove borda padrao */
+    border-radius: 10px;
+    /* Cantos arredondados do input */
+}
+
+/* Botao de enviar dentro do formulario */
+.login_area input[type="button"] {
+    background-color: #d94cab;
+    /* Cor de fundo do botao enviar */
+    color: #ffffff;
+    /* Cor do texto do botao */
+    border: none;
+    /* Remove a borda padrao */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    padding: 10px 18px;
+    /* Tamanho interno do botao */
+    cursor: pointer;
+    /* Mostra que o botao pode ser clicado */
+    font-weight: 600;
+    /* Destaque no texto do botao */
+}
+
+/* Botao enviar quando o mouse passa por cima */
+.login_area input[type="button"]:hover {
+    background-color: #b7368d;
+    /* Cor mais escura no hover */
+}
+
+/* Rodape final da pagina */
 .rodape {
-    margin-top: 36px; /* Espaco entre a ultima caixa e o rodape */
-    width: 100%; /* Faz o rodape ocupar toda a largura disponivel da pagina */
-    padding: 22px 16px; /* Espaco interno para o texto respirar */
-
-    color: white; /* Cor do texto para contraste no fundo escuro */
-    text-align: center; /* Centraliza o texto do rodape */
-    background: linear-gradient(to left, rgb(228, 88, 221) 0%, var(--cor-cabecalho) 50%, rgb(228, 88, 221) 100%); /* Degrade da direita para a esquerda */
+    margin-top: 36px;
+    /* Espaco acima do rodape */
+    width: 100%;
+    /* Ocupa toda a largura da pagina */
+    padding: 22px 16px;
+    /* Espaco interno do rodape */
+    color: white;
+    /* Cor do texto do rodape */
+    text-align: center;
+    /* Centraliza o texto do rodape */
+    background: linear-gradient(to left, rgb(228, 88, 221) 0%, var(--cor-cabecalho) 50%, rgb(228, 88, 221) 100%);
+    /* Fundo em degrade do rodape */
 }
 
+/* Paragrafo dentro do rodape */
 .rodape p {
-    margin: 0; /* Mantem somente o titulo centralizado sem folga extra */
+    margin: 0;
+    /* Remove margem do paragrafo do rodape */
 }
