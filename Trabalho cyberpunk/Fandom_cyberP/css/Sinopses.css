@@ -31,40 +31,164 @@ main::-webkit-scrollbar-thumb:hover {
 
 /* MENU LATERAL */
 
-nav:before{
+nav::before{
   background: #110;
+  content: "";
 }
 
-.menu,
 nav {
-  width: 100px;
+  width: 90px;
   background: #110;
   padding: 20px;
   box-sizing: border-box;
   border-block-start-radius: 10px;
-}
-nav:hover{
   transition: 0.3s;
-  padding: 100px;
+}
+
+nav:hover{
+  width: 200px;
+  padding: 20px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin:0 ;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilos para os items da lista do nav */
+nav li {
+  opacity: 0.3;
+  overflow-x: clip;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+  margin: 5px;
+}
+
+nav:hover li {
+  opacity: 1;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b3d4fc;
+  font-size: 12px;
+  padding: 10px;
+  display: block;
+  transition: 0.3s;
+  border: 1px solid #002020;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+.texto-indicando-episodios{
+  color: yellow;
+}
+
+
 
 footer{
-  width: 100px;
+  width: 70px;
   text-decoration: none;
-  overflow-x: hidden;
-  padding:4px;
+  overflow: hidden;
+  padding: 4px;
   background: #110;
   color: #b3d4fc;
   font-size: 12px;
   box-sizing: border-box;
 }
 footer a{
-  display: inline-block;
-  transform: rotate(-90deg);
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+  text-decoration: none;
+  color: #b3d4fc;
+
+  opacity: 0.2;
+  flex-direction: column;
+
+  transform: rotate(90deg);
   transform-origin: center center;
 }
+
+footer ul{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 100%;
+}
+
+
+footer li{
+  list-style: none;
+  padding:0;
+  height: 90px;
+  width: 30px;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+
+footer:hover{
+  width: 200px;
+  padding: 20px;
+  transition: 0.3s ease;
+  gap: 10px;
+}
+
+footer:hover ul{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: 20px;
+}
+
+footer:hover li {
+  border: 1px solid #002020;
+  border-radius: 10px;
+  list-style: none;
+
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  display: block;
+  gap: 10px;
+}
+footer a:hover{
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+  padding: 10px;
+}
+
+footer:hover a{
+  transform: rotate(0deg);
+  opacity: 1;
+  transition: 0.3s;
+}
+
+footer >image{
+  pointer-events: fill;
+  position: relative;
+}
+
 
 .introducao-da-sinopse-geral {
   min-height: 100vh;
@@ -114,7 +238,7 @@ main {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     var(--imagem-episodio);
   background-size: cover;
   background-position: center;
@@ -181,10 +305,10 @@ main {
 .ep-04 { --imagem-episodio: url("../img/Ep4.png"); --overlay-parallax: url("../img/Sinopse_ep4.png"); --parallax-position: -50vh ; --parallax-size: 90% auto;}
 .ep-05 { --imagem-episodio: url("../img/Ep5.png"); --overlay-parallax: url("../img/Sinopse_ep5.png"); --parallax-position: -3vw -25vh ; --parallax-size: 100% auto;}
 .ep-06 { --imagem-episodio: url("../img/Ep6.png"); --overlay-parallax: url("../img/Sinopse_ep6.png"); --parallax-position: 34vw -5vh; --parallax-size: 100% auto; }
-.ep-07 { --imagem-episodio: url("../img/Ep7.png"); --overlay-parallax: url("../img/Sinopse_ep7.png"); }
-.ep-08 { --imagem-episodio: url("../img/Ep8.png"); --overlay-parallax: url("../img/Sinopse_ep8.png"); }
-.ep-09 { --imagem-episodio: url("../img/Ep0.png"); --overlay-parallax: url("../img/Sinopse_ep9.png"); }
-.ep-10 { --imagem-episodio: url("../img/Ep10.png"); --overlay-parallax: url("../img/Sinopse_ep10.png"); }
+.ep-07 { --imagem-episodio: url("../img/Ep7.png"); --overlay-parallax: url("../img/Sinopse_ep7.png"); --parallax-position: -10vw -5vh; --parallax-size: 90% auto; }
+.ep-08 { --imagem-episodio: url("../img/Ep8.png"); --overlay-parallax: url("../img/Sinopse_ep8.png"); --parallax-position: 0vw 20vh; --parallax-size: 100% auto;}
+.ep-09 { --imagem-episodio: url("../img/Ep9.png"); --overlay-parallax: url("../img/Sinopse_ep9.png"); --parallax-position: -30vw 0vh; --parallax-size: 100% auto;}
+.ep-10 { --imagem-episodio: url("../img/Ep10.png"); --overlay-parallax: url("../img/Sinopse_ep10.png"); --parallax-position: -20vw -10vh; --parallax-size: 100% auto;}
 /* Aplica as classes novas sem quebrar as classes antigas do HTML */
 
 .box-do-texto-sinopse .titulo-do-episodio {
@@ -311,5 +435,118 @@ main {
   transform: scale(1.05);
 }
 
+.ep-07::after{
+  opacity: 1;
+  z-index: 2;
+  pointer-events: none;
+}
 
+.ep-07 .box-do-texto-sinopse{
+  opacity: 0.4;
+  margin-top: -15vw;
+  margin-left: -15vw;
+  z-index: 1;
+  backdrop-filter: blur(0px);
+}
+.ep-07 .box-do-texto-sinopse:hover{
+  opacity: 1;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+.ep-08::after{
+  opacity: 0.8;
+  z-index: 2;
+  pointer-events: none;
+}
+.ep-08 .box-do-texto-sinopse{
+  margin-top: -15vw;
+  opacity: 0.4;
+  z-index: 1;
+  backdrop-filter: blur(0px);
+}
+
+.ep-08 .box-do-texto-sinopse:hover{
+  opacity: 1;
+  backdrop-filter: blur(4px);
+  z-index: 3;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+.ep-08:has(.box-do-texto-sinopse:hover):after{
+  opacity: 0.2;
+}
+
+.ep-09::after {
+  background-image: var(--overlay-parallax);
+  background-repeat: no-repeat;
+  background-size: var(--parallax-size, 100% auto);
+  background-position: var(--parallax-position, center);
+
+  /* AQUI ESTÁ A MÁGICA */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,1),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.09),
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.03),
+    rgba(0,0,0,0.02),
+    rgba(0,0,0,0.001),
+    rgba(0,0,0,0)
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,1),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.09),
+    rgba(0,0,0,0.05),
+    rgba(0,0,0,0.03),
+    rgba(0,0,0,0.02),
+    rgba(0,0,0,0.001),
+    rgba(0,0,0,0)
+  );
+
+  opacity: 0.8;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ep-09 .box-do-texto-sinopse{
+  opacity: 0.4;
+  z-index: 1;
+  backdrop-filter: blur(0px);
+}
+.ep-09 .box-do-texto-sinopse:hover{
+  opacity: 1;
+  backdrop-filter: blur(4px);
+  transform: scale(1.05);
+  transition: 0.2s;
+  z-index: 3;
+}
+
+.ep-10::after{
+  opacity: 0.9;
+  z-index: 2;
+  pointer-events: none;
+}
+.ep-10 .box-do-texto-sinopse{
+  opacity: 0.2;
+  z-index: 1;
+  backdrop-filter: blur(0px);
+}
+.ep-10 .box-do-texto-sinopse:hover{
+  opacity: 1;
+  backdrop-filter: blur(4px);
+  transform: scale(1.05);
+  transition: 0.2s;
+  z-index: 3;
+}
+.ep-10:has(.box-do-texto-sinopse:hover):after{
+  opacity: 0.2;
+}
 
