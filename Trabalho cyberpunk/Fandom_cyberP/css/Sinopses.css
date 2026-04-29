@@ -27,7 +27,9 @@ main::-webkit-scrollbar-thumb {
 main::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 255, 255, 0.5);
 }
-
+main{
+  scroll-behavior: smooth;
+}
 
 /* MENU LATERAL */
 
@@ -155,7 +157,6 @@ footer:hover ul{
   margin: 0;
   gap: 20px;
 }
-
 footer:hover li {
   border: 1px solid #002020;
   border-radius: 10px;
@@ -213,20 +214,26 @@ main {
 }
 
 .episodio-individual-tela-inteira{
+  position: relative;
+  overflow: hidden;
+
   min-height: 100vh;
+
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
   display: flex;
   align-items: center;
+
   justify-content: center;
-  position: relative;
   isolation: isolate;
-  overflow: hidden;
 
   padding: 40px;
   box-sizing: border-box;
 
+  background-size: cover ;
+  background-position: center;
+  background-repeat: no-repeat;
   /* Variaveis para cada episodio: troque as URLs nas classes .ep-01 ... .ep-10 */
   --imagem-episodio: none;
   --overlay-parallax: none;
