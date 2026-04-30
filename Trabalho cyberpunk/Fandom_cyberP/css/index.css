@@ -1,6 +1,6 @@
 body::before{
   content: "";
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
   position: fixed;
   top: 0;
   left: 0;
@@ -34,6 +34,7 @@ body{
   padding: 10px;
   margin: 5%;
 }
+
 
 .item-de-navegacao{
   background: rgba(0, 0, 0, 0.7);
@@ -118,9 +119,50 @@ h1::after{
 
 .paragrafo-explicativo-do-contexto{
   color: yellow;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 10px;
-  margin: 2%;
+  margin-top: 2vh;
+
+  max-width: 80vw;
+}
+
+.titulo-do-bloco-de-abertura{
+  color: cyan;
+  margin:-1vw;
+  /*margin-left: 2vw;*/
+  font-size: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  /*border-bottom: 2px solid cyan;*/
+  background: rgba(0, 0, 0, 0.1);
+  padding:10px;
+  border-radius: 5px;
+}
+.titulo-do-bloco-de-abertura:hover{
+  text-shadow: 0 0 10px cyan;
+  color: yellow;
+  transition: 0.2s;
+  backdrop-filter: blur(4px);
+}
+
+.bloco-de-abertura{
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 80vw;
+  margin-left: 10%
+}
+.bloco-de-abertura:hover{
+  transform: scale(1.05);
+}
+
+
+.paragrafo-explicativo-do-contexto:hover{
+  backdrop-filter: blur(4px);
 }
 
