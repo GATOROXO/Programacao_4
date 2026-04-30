@@ -52,6 +52,10 @@ nav {
   transition: 0.3s;
 }
 
+.texto-personagem{
+  color: yellow;
+}
+
 nav:hover {
   width: 200px;
   padding: 20px;

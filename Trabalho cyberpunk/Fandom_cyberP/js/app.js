@@ -10,6 +10,10 @@ const observer = new IntersectionObserver((entries) => {
       setTimeout(() => {
         personagem.classList.add('animar');
       }, 50);
+    }if(!entry.isIntersecting) { 
+      const personagem = entry.target;
+
+      personagem.classList.remove('animar');
     }
   });
 }, {
